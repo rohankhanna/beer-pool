@@ -1,0 +1,11 @@
+{
+  "name": "beerpool",
+  "version": "0.0.1",
+  "description": "A siple chat app that contains a user vizualisable queueing mechanism that can facilitate the communication of individuals in a locality to come together aand make purchases in bulk to achieve better prices.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

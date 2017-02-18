@@ -1,0 +1,1 @@
+A simple chat app that contains a user vizualisable queueing mechanism that can facilitate the communication of individuals in a locality to come together aand make purchases in bulk to achieve better prices.
