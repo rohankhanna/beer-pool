@@ -155,7 +155,7 @@ body {
 
 .magnet-zone:after {
   pointer-events: none;
-  content: '\00d7';
+  //content: '\00d7';
   position: absolute;
   left: 0;
   right: 0;
@@ -191,7 +191,7 @@ body {
   
 </head>
 
-<body>
+<body class="moving">
   
 <div class="container">
   <div class="explain">Drag n drop chat heads like Facebook Messenger</div>
@@ -354,7 +354,7 @@ function move(event) {
   newX = this._posOrigin.x + event.pageX - this._touchOrigin.x;
   newY = this._posOrigin.y + event.pageY - this._touchOrigin.y;
   
-  moveMagnet(newX + (elRect.width / 2), newY + (elRect.height / 2));
+  //moveMagnet(newX + (elRect.width / 2), newY + (elRect.height / 2));
   
   startMoving();
   
@@ -455,12 +455,12 @@ function startTouching() {
 }
 
 function startMoving() {
-  $('body').addClass('moving');
+  //$('body').addClass('moving');
 }
 
 function stopMoving() {
-  $('body').removeClass('moving');
-  magnet.style.marginBottom = magnet.style.marginLeft = '0px';
+  //$('body').removeClass('moving');
+  //magnet.style.marginBottom = magnet.style.marginLeft = '0px';
 }
 
 function onTouchEnd(event) {
