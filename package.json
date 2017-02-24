@@ -9,6 +9,6 @@
     "socket.io": "1.2.0"
   },
   "scripts": {
-    "start": "nodemon --watch * index.js || node index.js"
+    "start": "nodemon --watch . --watch public index.js || node index.js"
   }
 }

@@ -167,12 +167,6 @@ function move(event) {
   springDestY = newY;
   
   if (overlapping) {
-    console.log('overlapping');
-    if(setInSlotToggle === false)
-      {
-        setInSlotToggle = true;
-        console.log('set')
-      }
     // center the circle in the magnetic zone
     var mx = (magnetRect.width / 2) + magnetRect.left;
     var my = (magnetRect.height / 2) + magnetRect.top;
@@ -183,7 +177,8 @@ function move(event) {
       // set magnetSpring
       magnetSpring.setVelocity(5).setEndValue(0);
       spring.setCurrentValue(0).setAtRest();
-      
+      console.log('set');
+      socket.emit('chatHead', { my: 'data', inSlot:true });
       vibrate(25);
     }
     
@@ -196,6 +191,8 @@ function move(event) {
 
     if ($(el).hasClass('overlap')) {
       spring.setEndValue(1);
+      console.log('unset');
+      socket.emit('chatHead', { my: 'data', inSlot:false });
       magnetSpring.setCurrentValue(1).setAtRest();
     }
     
@@ -258,7 +255,8 @@ function onTouchEnd(event) {
   var el = $(draggableEl),
       velocity = getVelocity();
   
-  if (!el.hasClass('overlap')) {    
+  if (!el.hasClass('overlap')) {
+      console.log('Stopped Moving');    
     flingWithVelocity(velocity);
     stopTouching();
     stopMoving();

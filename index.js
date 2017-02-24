@@ -13,8 +13,10 @@ io.on('connection', function(socket){
     io.emit('chat message', msg);
   });
   socket.on('nickname', function(nickname){
-    console.log(msg);
     io.broadcast('nickname', { nickname:nickname, joined: true });
+  });
+  socket.on('chatHead', function(chathead){
+    console.log(JSON.stringify(chathead));
   });
 });
 
